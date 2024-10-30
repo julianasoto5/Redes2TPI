@@ -4,17 +4,17 @@ node n1 {
     network-config {
 	hostname n1
 	!
-	interface eth2
-	 ipv6 address 2001:7::1/64
-	 ip address 14.200.11.1/30
-	!
 	interface eth1
 	 ipv6 address 2001:5::1/64
-	 ip address 14.200.11.5/30
+	 ip address 14.200.11.9/30
 	!
 	interface eth0
 	 ipv6 address 2001:4::2/64
-	 ip address 14.200.11.9/30
+	 ip address 14.200.11.5/30
+	!
+	interface eth2
+	 ipv6 address 2001:7::1/64
+	 ip address 14.200.11.1/30
 	!
     }
     canvas c1
@@ -33,19 +33,19 @@ node n2 {
 	!
 	interface eth3
 	 ipv6 address 2001:9::1/64
-	 ip address 14.200.11.13/30
+	 ip address 14.200.14.65/30
 	!
 	interface eth2
 	 ipv6 address 2001:8::2/64
-	 ip address 14.200.11.2/30
+	 ip address 14.200.11.13/30
 	!
 	interface eth1
 	 ipv6 address 2001:7::2/64
-	 ip address 14.200.11.17/30
+	 ip address 14.200.11.2/30
 	!
 	interface eth0
 	 ipv6 address 2001:6::2/64
-	 ip address 14.200.14.65/30
+	 ip address 14.200.11.17/30
 	!
     }
     canvas c1
@@ -63,17 +63,17 @@ node n3 {
     network-config {
 	hostname n3
 	!
-	interface eth4
-	 ipv6 address 2001:13::2/64
-	 ip address 14.200.11.21/30
-	!
 	interface eth3
 	 ipv6 address 2001:8::1/64
-	 ip address 14.200.11.6/30
+	 ip address 14.200.11.14/30
 	!
 	interface eth2
 	 ipv6 address 2001:4::1/64
-	 ip address 14.200.11.14/30
+	 ip address 14.200.11.6/30
+	!
+	interface eth4
+	 ipv6 address 2001:13::2/64
+	 ip address 14.200.11.21/30
 	!
 	interface eth1
 	 ipv6 address 2001:3::2/64
@@ -102,11 +102,11 @@ node n4 {
 	!
 	interface eth1
 	 ipv6 address 2001:14::2/64
-	 ip address 14.200.11.18/30
+	 ip address 14.200.11.25/30
 	!
 	interface eth0
 	 ipv6 address 2001:6::1/64
-	 ip address 14.200.11.25/30
+	 ip address 14.200.11.18/30
 	!
     }
     canvas c1
@@ -123,16 +123,16 @@ node n5 {
 	hostname n5
 	!
 	interface eth2
-	 ip address 14.200.8.1/23
-	 ipv6 address 200A:b8d:1014:1::1/64
+	 ip address 14.200.10.5/30
+	 ipv6 address 2001::2/64
 	!
 	interface eth1
 	 ipv6 address 2001:1::2/64
-	 ip address 14.200.10.5/30
+	 ip address 14.200.10.1/30
 	!
 	interface eth0
-	 ip address 14.200.10.1/30
-	 ipv6 address 2001::2/64
+	 ip address 14.200.8.1/23
+	 ipv6 address 200A:b8d:1014:1::1/64
 	!
     }
     canvas c1
@@ -194,16 +194,16 @@ node n8 {
 	hostname n8
 	!
 	interface eth2
-	 ip address 14.200.14.1/30
 	 ipv6 address 200A:b8d:1014:F1::1/64
+	 ip address 14.200.14.1/26
 	!
 	interface eth1
-	 ip address 14.200.14.70/30
 	 ipv6 address 200A:b8d:1014:F3::2/64
+	 ip address 14.200.12.1/23
 	!
 	interface eth0
-	 ip address 14.200.12.1/23
 	 ipv6 address 200A:b8d:1014:F0::1/64
+	 ip address 14.200.14.70/30
 	!
     }
     canvas c1
@@ -321,16 +321,16 @@ node n15 {
 	!
 	interface eth1
 	 ipv6 address 2001:14::1/64
-	 ip address 14.200.11.22/30
+	 ip address 14.200.11.26/30
 	!
 	interface eth0
 	 ipv6 address 2001:13::1/64
-	 ip address 14.200.11.26/30
+	 ip address 14.200.11.22/30
 	!
     }
     canvas c1
-    iconcoords {828.0 1111.6666666666665}
-    labelcoords {828.0 1143.6666666666665}
+    iconcoords {858.0 1074.6666666666665}
+    labelcoords {858.0 1106.6666666666665}
     interface-peer {eth0 n3}
     interface-peer {eth1 n4}
 }
