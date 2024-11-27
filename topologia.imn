@@ -110,8 +110,8 @@ node n4 {
 	!
     }
     canvas c1
-    iconcoords {1098.0 921.0}
-    labelcoords {1098.0 953.0}
+    iconcoords {1096.0 902.0}
+    labelcoords {1096.0 934.0}
     interface-peer {eth0 n2}
     interface-peer {eth1 n15}
 }
@@ -442,3 +442,4 @@ option global {
 
 option session {
 }
+
