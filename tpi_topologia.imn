@@ -474,7 +474,7 @@ node n10 {
 	hostname n10
 	!
 	interface eth0
-	 ip address 14.200.2.10/24
+	 ip address 14.200.11.10/30
 	 ipv6 address 2001:b9d:1014:2::10/64
 	!
     }
