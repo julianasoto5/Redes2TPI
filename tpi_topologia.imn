@@ -60,19 +60,18 @@ node n2 {
     network-config {
 	hostname n2
 	!
+	interface eth3
+	 ip address 14.200.11.13/30
+	!
 	interface eth0
 	 ip address 14.200.14.65/30
-	 ipv6 address 200A:b8d:1014:F2::1/64
+	 ipv6 address 200a:b8d:1014:F2::1/64
 	!
 	interface eth2
 	 ip address 14.200.11.2/30
 	!
 	interface eth1
 	 ip address 14.200.11.17/30
-	!
-	interface eth3
-	 ipv6 address 2001:b9d:1014:9::2/64
-	 ip address 14.200.11.13/30
 	!
     }
     canvas c1
@@ -122,6 +121,12 @@ node n3 {
     network-config {
 	hostname n3
 	!
+	interface eth4
+	 ip address 14.200.11.21/30
+	!
+	interface eth3
+	 ip address 14.200.11.6/30
+	!
 	interface eth2
 	 ip address 14.200.11.14/30
 	!
@@ -130,14 +135,6 @@ node n3 {
 	!
 	interface eth0
 	 ip address 14.200.10.9/30
-	!
-	interface eth4
-	 ipv6 address 2001:b9d:1014:6::1/64
-	 ip address 14.200.11.21/30
-	!
-	interface eth3
-	 ipv6 address 2001:b9d:1014:4::1/64
-	 ip address 14.200.11.6/30
 	!
     }
     canvas c1
@@ -237,11 +234,11 @@ node n5 {
     network-config {
 	hostname n5
 	!
-	interface eth1
-	 ip address 14.200.10.5/30
-	!
 	interface eth0
 	 ip address 14.200.10.1/30
+	!
+	interface eth1
+	 ip address 14.200.10.5/30
 	!
 	interface eth2
 	 ipv6 address 200A:b8d:1014:1::1/64
@@ -249,8 +246,8 @@ node n5 {
 	!
     }
     canvas c1
-    iconcoords {217.0 534.0}
-    labelcoords {189.0 558.0}
+    iconcoords {215.0 614.0}
+    labelcoords {187.0 638.0}
     services {IPForward StaticRoute}
     interface-peer {eth0 n6}
     interface-peer {eth2 n12}
@@ -339,11 +336,11 @@ node n7 {
 	!
 	interface eth1
 	 ip address 14.200.14.69/30
-	 ipv6 address 200A:b9d:1014:F3::1/64
+	 ipv6 address 200A:b8d:1014:F3::1/64
 	!
 	interface eth0
 	 ip address 14.200.14.66/30
-	 ipv6 address 200A:b9d:1014:F2::2/64
+	 ipv6 address 200A:b8d:1014:F2::2/64
 	!
     }
     canvas c1
@@ -377,6 +374,8 @@ node n7 {
 	ip route add 14.200.12.0/23 via 14.200.14.70
 	ip route add 14.200.14.0/26 via 14.200.14.70
 	ip route add 0.0.0.0/0 via 14.200.14.65
+	
+	ip -6 route add default via 200a:b8d:1014:F3::2
 	}
     }
 }
@@ -387,17 +386,17 @@ node n8 {
     network-config {
 	hostname n8
 	!
+	interface eth2
+	 ip address 14.200.14.1/26
+	 ipv6 address 200A:b8d:1014:F1::1/64
+	!
 	interface eth1
 	 ip address 14.200.14.70/30
-	 ipv6 address 200A:b9d:1014:F3::2/64
+	 ipv6 address 200A:b8d:1014:F3::2/64
 	!
 	interface eth0
 	 ip address 14.200.12.1/23
-	 ipv6 address 200A:b9d:1014:F0::1/64
-	!
-	interface eth2
-	 ip address 14.200.14.1/26
-	 ipv6 address 200A:b9d:1014:F1::1/64
+	 ipv6 address 200A:b8d:1014:F0::1/64
 	!
     }
     canvas c1
@@ -432,6 +431,7 @@ node n8 {
 	#/sbin/ip route add 3ffe:4::/64 via 2001:b9d:1014:f1::1
 	
 	ip route add 0.0.0.0/0 via 14.200.14.69
+	ip -6 route add default via 200a:b8d:1014:F3::1
 	}
     }
 }
@@ -444,7 +444,7 @@ node n9 {
 	!
 	interface eth0
 	 ip address 14.200.12.2/23
-	 ipv6 address 200A:b9d:1014:F0::2/64
+	 ipv6 address 200A:b8d:1014:F0::2/64
 	!
     }
     canvas c1
@@ -461,7 +461,6 @@ node n10 {
 	!
 	interface eth0
 	 ip address 14.200.11.10/30
-	 ipv6 address 2001:b9d:1014:2::10/64
 	!
     }
     canvas c1
@@ -499,6 +498,7 @@ node n12 {
     interface-peer {e0 n5}
     interface-peer {e1 n11}
     interface-peer {e2 n13}
+    services {zebra IPForward}
 }
 
 node n13 {
@@ -516,6 +516,7 @@ node n13 {
     iconcoords {126.0 172.66666666666666}
     labelcoords {155.33333333333334 143.33333333333334}
     interface-peer {eth0 n12}
+    services {DefaultRoute IPForward SSH}
 }
 
 node n14 {
@@ -526,7 +527,7 @@ node n14 {
 	!
 	interface eth0
 	 ip address 14.200.14.2/26
-	 ipv6 address 200A:b9d:1014:F1::2/64
+	 ipv6 address 200A:b8d:1014:F1::10/64
 	!
     }
     canvas c1
@@ -676,7 +677,7 @@ canvas c1 {
 option global {
     interface_names yes
     ip_addresses yes
-    ipv6_addresses yes
+    ipv6_addresses no
     node_labels yes
     link_labels yes
     show_api no
